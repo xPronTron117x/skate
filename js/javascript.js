@@ -4,7 +4,7 @@ var infowindow;
 var messagewindow;
 
 function initMap() {
-    var Purch = {lat: 41.049043, lng: -73.703403 };
+    var Purch = {lat: 41.0486305, lng: -73.701121 };
     map = new google.maps.Map(document.getElementById('map'), {
         center: Purch,
         zoom: 17

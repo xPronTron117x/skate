@@ -9,7 +9,7 @@
   }
 
   #right {
-    float: right;
+   float: right;
    position: absolute;
    right: 0px;
    top: 0px;
@@ -18,4 +18,6 @@
    padding: 5px;
    color: black;
    font-weight: bold;
+   width: 30%;
+   height: 80%;
   }
