@@ -20,4 +20,7 @@
    font-weight: bold;
    width: 30%;
    height: 80%;
+   border-radius: 0px 0px 0px 30px;
+   
+box-shadow: 5px 10px 20px grey;
   }
