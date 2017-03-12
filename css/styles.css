@@ -7,8 +7,15 @@
     margin: 0;
     padding: 0;
   }
-  
+
   #right {
-	  width:40%;
-	  float:right;
+    float: right;
+   position: absolute;
+   right: 0px;
+   top: 0px;
+   z-index: 1000;
+   background-color: white;
+   padding: 5px;
+   color: black;
+   font-weight: bold;
   }
