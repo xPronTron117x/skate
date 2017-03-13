@@ -1,0 +1,26 @@
+{[
+	{
+		"id": 0,
+		"lat": 41.048631,
+		"long": -73.701121,
+		"title": "library",
+		"rating": 1,
+		"type": "stairs"
+	},
+	{
+		"id": 1,
+		"lat": 41.047486,
+		"long": -73.700871,
+		"title": "stood",
+		"rating": 3,
+		"type": "ramp"
+	},
+	{
+		"id": 2,
+		"lat": 41.050184,
+		"long": -73.7021693,
+		"title": "the hub",
+		"rating": 5,
+		"type": "bank"
+	}
+]}
