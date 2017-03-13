@@ -10,10 +10,12 @@
     <div id="form">
     <table>
         <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
-        <tr><td>(Star) Rating:</td> <td><select id='type'>
-        <option value='beginner' SELECTED>Beginner</option>
-        <option value='intermediate' SELECTED>Intermediate</option>
-        <option value='advanced' SELECTED>Advanced</option>
+        <tr><td>Rating:</td> <td><select id='type'>
+        <option value='1' SELECTED>1</option>
+        <option value='2' SELECTED>2</option>
+        <option value='3' SELECTED>3</option>
+        <option value='4' SELECTED>4</option>
+        <option value='5' SELECTED>5</option>
         </select></td></tr>
         <tr><td>Type:</td> <td><select id='type'>
         <option value='rail' SELECTED>Rail</option>
@@ -29,17 +31,15 @@
     </table>
     </div>
     <div id="message">Location saved</div>
-	
+
 	<div id='info'>
-		<h1 id='info-name'>SAMPLE NAME</h1>
-		<h2>0/5</h2>
-		<p>It's a boy!</p>
+		<h1 id='info-name'>Name: SAMPLE NAME</h1>
+		<h2 id= 'info-rating'>Rating: 0/5</h2>
+		<p id='info-type'>Type:</p>
 	</div>
 
     <script type='text/javascript' src='js/javascript.js'></script>
-	<script type='text/javascript'>
-		document.getElementById('info-name').innerHTML = "NEW SAMPLE NAME BOOYA";
-	</script>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB87_4rBxFWAxJQT-NQDAYyf-GJeA3ur7M&callback=initMap">
     </script>

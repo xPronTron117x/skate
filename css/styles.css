@@ -17,10 +17,11 @@
    background-color: white;
    padding: 5px;
    color: black;
-   font-weight: bold;
    width: 30%;
    height: 80%;
    border-radius: 0px 0px 0px 30px;
-   
-box-shadow: 5px 10px 20px grey;
+   box-shadow: 5px 10px 20px grey;
+
+   font-family: monospace;
+   font-weight: bold;
   }
