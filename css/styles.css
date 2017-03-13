@@ -11,16 +11,16 @@
   #info {
    float: right;
    position: absolute;
-   right: 0px;
-   top: 0px;
+   right: 10px;
+   top: 10px;
    z-index: 1000;
    background-color: white;
    padding: 5px;
    color: black;
-   width: 320px;
-   height: 80%;
-   border-radius: 0px 0px 0px 30px;
-   box-shadow: 5px 5px 40px black;
+   width: 310px;
+   height: 530px;
+   /*border-radius: 0px 0px 0px 30px;*/
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 
 
   }
@@ -29,8 +29,8 @@
   position: absolute;
   text-align: center;
   padding: 0px;
-  right: 335px;
-  top: -50px;
+  right: 325px;
+  top: -40px;
   z-index: 1001;
 
   }
