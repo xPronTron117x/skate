@@ -1,3 +1,25 @@
+<?php
+  //retrieve data from database...
+require("opendb.php");
+global $conn;
+
+$query = "SELECT name,rating,lng,lat,type FROM skatespot";
+$result = $conn->query($query);
+$locationInfo = array();
+if ($result->num_rows > 0)
+{
+  while($row = $result->fetch_assoc())
+  {
+    array_push($locationInfo, $row);
+  }
+}
+else
+{
+  echo("0 results from database");
+}
+
+?>
+
 <!DOCTYPE html >
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -49,13 +71,19 @@
     <br>
     <img id="image" src="images/test.png" alt="placeholder"  height="250" width="250">
 	</div>
+    <script>
+      var locationsInfo = <?php echo(json_encode($locationInfo))?>;
+    </script>
+    <script type='text/javascript' src='js/javascript.js'>
 
-    <script type='text/javascript' src='js/javascript.js'></script>
+
+    </script>
 
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB87_4rBxFWAxJQT-NQDAYyf-GJeA3ur7M&callback=initMap">
     </script>
     <script>
+
       $("#theForm").on("submit",function(event)
       {
         event.preventDefault();
@@ -74,10 +102,9 @@
             success:function(feedback)
             {
               $("#feedbackMessage").html(feedback);
+              location.reload();
             }
         });
-        // var long = $("").val();
-
       });
     </script>
   </body>
