@@ -6,16 +6,14 @@ var allOfTheMarkers = [];
 var userSelectedMarker = null;
 
 
-function initMap()
-{
+function initMap(){
   var Purch = {lat: 41.0486305, lng: -73.701121 };
-  map = new google.maps.Map(document.getElementById('map'),
-  {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: Purch,
-    zoom: 17
-
-
+    zoom: 17,
+    mapTypeId:'hybrid',
   });
+
   // var allOfTheLocations = locationsInfo;
   console.log(locationsInfo);
   // create markers for all of the locations..
@@ -47,12 +45,15 @@ function initMap()
         var marker = new google.maps.Marker({
             position: event.latLng,
             animation: google.maps.Animation.DROP,
+
           //  map: map
         });
 
         var infowindow = new google.maps.InfoWindow({
             content: document.getElementById('form')
         });
+
+          // marker.setIcon('images/wheel.png')
 
         marker.addListener("click", function()
         {

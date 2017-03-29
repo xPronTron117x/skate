@@ -20,17 +20,21 @@ else
 
 ?>
 
-<!DOCTYPE html >
+<!DOCTYPE html>
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/wheel.png"/>
+
     <title>Skate Spots</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
 
-    <div id="logo"> <img src="images/logo/logoV1.png" alt="Skate Spots"  width="275"></div>
+
 
     <div id="map"></div>
     <div id="form" >
@@ -65,12 +69,15 @@ else
 
 
 	<div id='info'>
-		<h1 id='info-name'> SAMPLE NAME (Stood) </h1>
-		<h2 id= 'info-rating'> 0/5 Stars </h2>
-		<h2 id='info-type'>Sample Type (Ledge) </h2>
-    <br>
-    <img id="image" src="images/test.png" alt="placeholder"  height="250" width="250">
-	</div>
+    <img id="logo" src="images/logo/logoV1.png" alt="Skate Spots"  width="275">
+
+
+		<h1 id='info-name'> Welcome to Skate Spots!</h1><br><br>
+		<h2 id= 'info-rating'> Click anywhere to drop a pin, or click on a pin to find out more!</h2><br><br>
+		<h3 id='info-type'> </h3>
+    <img id="image" src="http://placehold.it/250x250" alt="placeholder"  height="250" width="250">
+  </div>
+
     <script>
       var locationsInfo = <?php echo(json_encode($locationInfo))?>;
     </script>
