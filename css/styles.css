@@ -33,7 +33,7 @@
   left: 20px;
   }
 
-  h1,h3{
+  h1,h3, {
     position: absolute;
     display: block;
     font-family: 'Roboto';

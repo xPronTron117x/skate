@@ -77,6 +77,7 @@ function addAClickListener(locations, i, aMarker)
   aMarker.addListener("click", function()
   {
     document.getElementById("info-name").innerHTML = locations[i].name;
+    document.getElementById("info-cop").innerHTML = locations[i].cop;
     document.getElementById("info-rating").innerHTML = locations[i].rating;
     document.getElementById("info-type").innerHTML = locations[i].type;
   });

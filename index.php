@@ -3,7 +3,7 @@
 require("opendb.php");
 global $conn;
 
-$query = "SELECT name,rating,lng,lat,type FROM skatespot";
+$query = "SELECT name,cop,rating,lng,lat,type FROM skatespot";
 $result = $conn->query($query);
 $locationInfo = array();
 if ($result->num_rows > 0)
@@ -41,17 +41,24 @@ else
     <form id="theForm" action="data.php" method="post">
     <table>
         <tr><td>Name:</td> <td><input type='text' name = "name" id='name'/> </td> </tr>
-        <tr><td>Rating:</td> <td><select name = "rating" id='rating'>
-        <option value='1' SELECTED>1</option>
-        <option value='2' SELECTED>2</option>
-        <option value='3' SELECTED>3</option>
-        <option value='4' SELECTED>4</option>
-        <option value='5' SELECTED>5</option>
-      </select></td></tr>
+      <tr><td>Cops:</td> <td><select name = "cop" id='cop'>
+      <option value='No cops or security to worry about!' SELECTED>No cops or security</option>
+      <option value='Occasional cops, keep an eye out!' >Occasional Cops</option>
+      <option value='Watch out for the security!' >Private Security</option>
+      <option value='Careful, this place has a lot of enforcement!' >Plenty of Cops</option>
+      <option value='Skate at your own risk, the cops are everywhere!' >Cops Everywhere</option>
+    </select></td></tr>
+    <tr><td>Rating:</td> <td><select name = "rating" id='rating'>
+    <option value='1 Star' SELECTED>1 Star</option>
+    <option value='2 Stars' >2 Stars</option>
+    <option value='3 Stars' >3 Stars</option>
+    <option value='4 Stars' >4 Stars</option>
+    <option value='5 Stars' >5 Stars</option>
+  </select></td></tr>
         <tr><td>Type:</td> <td><select name = "type" id='type'>
         <option value='rail' SELECTED>Rail</option>
         <option value='ledge'>Ledge</option>
-        <option value='ramp' SELECTED>Ramp</option>
+        <option value='ramp' >Ramp</option>
         <option value='stairs'>Stairs</option>
         <option value='bank'>Bank</option>
         <option value='line'>Line</option>
@@ -72,9 +79,10 @@ else
     <img id="logo" src="images/logo/logoV1.png" alt="Skate Spots"  width="275">
 
 
-		<h1 id='info-name'> Welcome to Skate Spots!</h1><br><br>
-		<h2 id= 'info-rating'> Click anywhere to drop a pin, or click on a pin to find out more!</h2><br><br>
-		<h3 id='info-type'> </h3>
+		<h1 id= 'info-name'> Welcome to Skate Spots!</h1><br><br>
+		<h2 id= 'info-cop'> Click anywhere to drop a pin, or click on a pin to find out more!</h2><br><br>
+    <h3 id= 'info-rating'> </h3><br><br>
+    <h3 id= 'info-type'> </h3>
     <img id="image" src="http://placehold.it/250x250" alt="placeholder"  height="250" width="250">
   </div>
 
@@ -82,8 +90,6 @@ else
       var locationsInfo = <?php echo(json_encode($locationInfo))?>;
     </script>
     <script type='text/javascript' src='js/javascript.js'>
-
-
     </script>
 
     <script async defer
@@ -95,6 +101,7 @@ else
       {
         event.preventDefault();
         var name = $("#name").val();
+        var cop = $("#cop").val();
         var rating = $("#rating").val();
         var type = $("#type").val();
         var lat = userSelectedMarker.getPosition().lat();
@@ -105,7 +112,7 @@ else
             type: "POST",
             url:"data.php",
             dataType:"text",
-            data: {"name":name, "rating":rating,"type":type,"lat":lat,"long":long},
+            data: {"name":name, "cop":cop, "rating":rating, "type":type,"lat":lat,"long":long},
             success:function(feedback)
             {
               $("#feedbackMessage").html(feedback);

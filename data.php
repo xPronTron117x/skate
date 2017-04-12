@@ -17,15 +17,16 @@ if ($conn->connect_error) {
 
 
 $name = $_POST["name"];
-$type = $_POST["type"];
+$cop = $_POST["cop"];
 $rating = $_POST["rating"];
+$type = $_POST["type"];
 $lat = $_POST["lat"];
 $long = $_POST["long"];
 $lat = floatval($lat);
 $long = floatval($long);
 
-$query = "INSERT INTO skatespot (name, rating, type, lng, lat)
-VALUES ('$name', '$rating', '$type', '$long', '$lat')";
+$query = "INSERT INTO skatespot (name, cop, rating, type, lng, lat)
+VALUES ('$name', '$cop', '$rating', '$type', '$long', '$lat')";
 
 if ($conn->query($query) === TRUE) {
     echo "Saved!";
