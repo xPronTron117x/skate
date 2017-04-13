@@ -105,14 +105,15 @@ else
         var rating = $("#rating").val();
         var type = $("#type").val();
         var lat = userSelectedMarker.getPosition().lat();
-        var long = userSelectedMarker.getPosition().lng();
+        var lng = userSelectedMarker.getPosition().lng();
+		var pic = $("#pic").val();
         var dataToSend = {};
         $.ajax
         ({
             type: "POST",
             url:"data.php",
             dataType:"text",
-            data: {"name":name, "cop":cop, "rating":rating, "type":type,"lat":lat,"long":long},
+            data: {"name":name, "cop":cop, "rating":rating, "type":type,"lat":lat,"lng":lng,"pic":pic},
             success:function(feedback)
             {
               $("#feedbackMessage").html(feedback);
