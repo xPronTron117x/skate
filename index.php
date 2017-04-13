@@ -42,11 +42,11 @@ else
     <table>
         <tr><td>Name:</td> <td><input type='text' name = "name" id='name'/> </td> </tr>
       <tr><td>Cops:</td> <td><select name = "cop" id='cop'>
-      <option value='No cops or security to worry about!' SELECTED>No cops or security</option>
+      <option value='Spots in the clear. No cops!' SELECTED>No Cops or Security</option>
       <option value='Occasional cops, keep an eye out!' >Occasional Cops</option>
-      <option value='Watch out for the security!' >Private Security</option>
-      <option value='Careful, this place has a lot of enforcement!' >Plenty of Cops</option>
-      <option value='Skate at your own risk, the cops are everywhere!' >Cops Everywhere</option>
+      <option value='Watch out for the security here!' >Private Security</option>
+      <option value='This spot has a lot of enforcement!' >Plenty of Cops</option>
+      <option value='The cops are all over this spot!' >Cops Everywhere</option>
     </select></td></tr>
     <tr><td>Rating:</td> <td><select name = "rating" id='rating'>
     <option value='1 Star' SELECTED>1 Star</option>
@@ -56,14 +56,15 @@ else
     <option value='5 Stars' >5 Stars</option>
   </select></td></tr>
         <tr><td>Type:</td> <td><select name = "type" id='type'>
-        <option value='rail' SELECTED>Rail</option>
-        <option value='ledge'>Ledge</option>
-        <option value='ramp' >Ramp</option>
-        <option value='stairs'>Stairs</option>
-        <option value='bank'>Bank</option>
-        <option value='line'>Line</option>
-        <option value='park'>Park</option>
-        <option value='lot'>Lot</option>
+        <option value='Rail' SELECTED>Rail</option>
+        <option value='Ledge'>Ledge</option>
+        <option value='Ramp' >Ramp</option>
+        <option value='Stairs'>Stairs</option>
+        <option value='Hill'>Hill</option>
+        <option value='Bank'>Bank</option>
+        <option value='Line'>Line</option>
+        <option value='Park'>Park</option>
+        <option value='Lot'>Lot</option>
         </select> </td></tr>
         <tr><td>Upload (placeholder)</td> <td><input type='text' id='upload'/> </td> </tr>
         <div id="feedbackMessage"></div>
@@ -81,8 +82,8 @@ else
 
 		<h1 id= 'info-name'> Welcome to Skate Spots!</h1><br><br>
 		<h2 id= 'info-cop'> Click anywhere to drop a pin, or click on a pin to find out more!</h2><br><br>
-    <h3 id= 'info-rating'> </h3><br><br>
-    <h3 id= 'info-type'> </h3>
+    <h2 id= 'info-rating'> </h2><br><br>
+    <h2 id= 'info-type'> </h2>
     <img id="image" src="http://placehold.it/250x250" alt="placeholder"  height="250" width="250">
   </div>
 
@@ -105,7 +106,7 @@ else
         var rating = $("#rating").val();
         var type = $("#type").val();
         var lat = userSelectedMarker.getPosition().lat();
-        var lng = userSelectedMarker.getPosition().lng();
+        var long = userSelectedMarker.getPosition().lng();
 		var pic = $("#pic").val();
         var dataToSend = {};
         $.ajax
@@ -113,7 +114,7 @@ else
             type: "POST",
             url:"data.php",
             dataType:"text",
-            data: {"name":name, "cop":cop, "rating":rating, "type":type,"lat":lat,"lng":lng,"pic":pic},
+            data: {"name":name, "cop":cop, "rating":rating, "type":type,"lat":lat,"long":long,"pic":pic},
             success:function(feedback)
             {
               $("#feedbackMessage").html(feedback);

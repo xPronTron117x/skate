@@ -21,13 +21,13 @@ $cop = $_POST["cop"];
 $rating = $_POST["rating"];
 $type = $_POST["type"];
 $lat = $_POST["lat"];
-$lng = $_POST["lng"];
+$long = $_POST["long"];
 $lat = floatval($lat);
-$lng = floatval($lng);
+$long = floatval($long);
 $pic = $_POST["pic"];
 
 $query = "INSERT INTO skatespot (name, cop, rating, type, lng, lat, pic)
-VALUES ('$name', '$cop', '$rating', '$type', '$lng', '$lat', '$pic')";
+VALUES ('$name', '$cop', '$rating', '$type', '$long', '$lat', '$pic')";
 
 if ($conn->query($query) === TRUE) {
     echo "Saved!";
