@@ -22,11 +22,12 @@ else
 
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <!-- <meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/wheel.png"/>
 
     <title>Skate Spots</title>
@@ -77,7 +78,7 @@ else
 
 
 	<div id='info'>
-    <img id="logo" src="images/logo/logoV1.png" alt="Skate Spots"  width="275">
+    <img id="logo" src="images/logo/logoV2.png" alt="Skate Spots">
 
 
 		<h1 id= 'info-name'> Welcome to Skate Spots!</h1><br><br>
